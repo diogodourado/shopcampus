@@ -1,0 +1,6 @@
+[01-Feb-2014 05:10:57 America/Sao_Paulo] PHP Warning:  mysql_query(): Access denied for user 'paypal'@'localhost' (using password: NO) in /home/paypal/public_html/pay/checkout/checkoutSucesso.php on line 20
+[01-Feb-2014 05:10:57 America/Sao_Paulo] PHP Warning:  mysql_query(): A link to the server could not be established in /home/paypal/public_html/pay/checkout/checkoutSucesso.php on line 20
+[01-Feb-2014 05:10:57 America/Sao_Paulo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/paypal/public_html/pay/checkout/checkoutSucesso.php:20) in /home/paypal/public_html/pay/checkout/checkoutSucesso.php on line 21
+[01-Feb-2014 05:11:48 America/Sao_Paulo] PHP Warning:  mysql_query(): Access denied for user 'paypal'@'localhost' (using password: NO) in /home/paypal/public_html/pay/checkout/checkoutSucesso.php on line 20
+[01-Feb-2014 05:11:48 America/Sao_Paulo] PHP Warning:  mysql_query(): A link to the server could not be established in /home/paypal/public_html/pay/checkout/checkoutSucesso.php on line 20
+[01-Feb-2014 05:11:48 America/Sao_Paulo] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/paypal/public_html/pay/checkout/checkoutSucesso.php:20) in /home/paypal/public_html/pay/checkout/checkoutSucesso.php on line 21
