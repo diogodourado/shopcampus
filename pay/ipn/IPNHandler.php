@@ -7,14 +7,15 @@ include 'InstantPaymentNotification.php';
 class SampleIPNHandler implements IPNHandler {
     public function handle( $isVerified , array $message ) {
 
+        
         ob_start();
         var_dump($message);
-        $resultado = "\n------\n\n executado em: " . date("d-m-Y H:i:s") . "\n\n" . ob_get_clean();
-        /*
-        $fp = fopen("log.txt", "a");
+        $resultado = "\n----- IPN ---\n\n executado em: " . date("d-m-Y H:i:s") . "\n\n" . ob_get_clean();
+  
+        $fp = fopen("../../log.txt", "a");
         $resultado = fwrite($fp, $resultado);
         fclose($fp);
-        */
+      
 
         if ( $isVerified ) {
             if ( $message[ 'receiver_email' ] == PAYPAL_ACCOUNT ) {

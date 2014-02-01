@@ -44,6 +44,16 @@ if ($nvpRecurring['ACK'] != 'Success' && $nvpRecurring[ 'ACK' ] != 'SuccessWithW
     $erro = 3;
     var_dump($nvpRecurring);
 } else {
+
+    ob_start();
+    var_dump($nvpRecurring);
+    $resultado = "\n--- CreateRecurringPaymentsProfile ---\n\n executado em: " . date("d-m-Y H:i:s") . "\n\n" . ob_get_clean();
+
+    $fp = fopen("../../log.txt", "a");
+    $resultado = fwrite($fp, $resultado);
+    fclose($fp);
+
+
     $transacao['transaction'] = 'INSCRICAO DE ASSINATURA';
     $transacao['assinatura'] = $nvpRecurring['PROFILEID'];
     $transacao['pedidos_id'] = $invoice;

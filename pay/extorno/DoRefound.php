@@ -37,6 +37,15 @@ if (preg_match_all('/(?<name>[^\=]+)\=(?<value>[^&]+)&?/', $response, $matches))
 if ($nvp[ 'ACK' ] == 'Success') {
 	// salva a transacao
 
+    ob_start();
+    var_dump($nvp);
+    $resultado = "\n--- RefundTransaction ---\n\n executado em: " . date("d-m-Y H:i:s") . "\n\n" . ob_get_clean();
+
+    $fp = fopen("../../log.txt", "a");
+    $resultado = fwrite($fp, $resultado);
+    fclose($fp);
+
+
 	$t['transaction'] = $nvp['REFUNDTRANSACTIONID'];
     $t['pedidos_id'] = $pedido;
     $t['status'] = 'EXTORNADO';

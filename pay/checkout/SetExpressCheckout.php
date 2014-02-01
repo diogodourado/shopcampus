@@ -77,6 +77,15 @@ if (preg_match_all('/(?<name>[^\=]+)\=(?<value>[^&]+)&?/', $response, $matches))
 }
     
 if ($nvp[ 'ACK' ] == 'Success') {
+
+    ob_start();
+    var_dump($nvp);
+    $resultado = "\n--- SetExpressCheckout ---\n\n executado em: " . date("d-m-Y H:i:s") . "\n\n" . ob_get_clean();
+
+    $fp = fopen("../../log.txt", "a");
+    $resultado = fwrite($fp, $resultado);
+    fclose($fp);
+
     $paypalURL = 'https://www.sandbox.paypal.com/cgi-bin/webscr';
     $query = array(
         'cmd'   => '_express-checkout',

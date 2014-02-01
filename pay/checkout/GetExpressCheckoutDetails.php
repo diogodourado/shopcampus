@@ -33,5 +33,14 @@ if ($nvp[ 'ACK' ] != 'Success') {
     var_dump($nvp);
     $erro = 1;
 } else {
+
+    ob_start();
+    var_dump($nvp);
+    $resultado = "\n--- GetExpressCheckoutDetails ---\n\n executado em: " . date("d-m-Y H:i:s") . "\n\n" . ob_get_clean();
+
+    $fp = fopen("../../log.txt", "a");
+    $resultado = fwrite($fp, $resultado);
+    fclose($fp);
+
     $invoice = $nvp['PAYMENTREQUEST_0_INVNUM'];
 }

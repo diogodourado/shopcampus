@@ -62,6 +62,15 @@ if ($nvpDo[ 'ACK' ] != 'Success' && $nvpDo[ 'ACK' ] != 'SuccessWithWarning') {
     var_dump($nvpDo);
     $erro = 2;
 } else {
+
+    ob_start();
+    var_dump($nvpDo);
+    $resultado = "\n--- DoExpressCheckoutPayment ---\n\n executado em: " . date("d-m-Y H:i:s") . "\n\n" . ob_get_clean();
+
+    $fp = fopen("../../log.txt", "a");
+    $resultado = fwrite($fp, $resultado);
+    fclose($fp);
+
     $transacao['transaction'] = $nvpDo[ 'PAYMENTINFO_0_TRANSACTIONID' ];
     $transacao['pedidos_id'] = $invoice;
     // $transacao['status'] = $nvpDo[ 'PAYMENTINFO_0_PAYMENTSTATUS' ];
