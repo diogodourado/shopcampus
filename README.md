@@ -6,14 +6,22 @@ Hackthon Paypal #CPBR7 - Diogo Dourado / Thiago Mendes
 Equipe: SHOP CAMPUS
 
 Diogo de Azevedo Rocha Dourado
+
 CPF: ***.***.***-50
+
 Telefone: (38) 9948-6476
+
 E-mail: diogo@dourado.net
 
+
 Thiago Mendes Borges
+
 CPF: ***.***.***-42
+
 Telefone: (38) 9985-2603
+
 E-mail: thigas88@gmail.com
+
 
 URL de demonstracao: http://paypal.sitesdiversos.com/
 
